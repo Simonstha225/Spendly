@@ -20,6 +20,7 @@ public class Expense {
     private double amount;
     private String category;
     private LocalDate date;
+    private String userEmail;
 
     public String getId() {
         return id != null ? id.toHexString() : null;

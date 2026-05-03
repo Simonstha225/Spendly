@@ -13,12 +13,13 @@ public class ExpenseService {
     public ExpenseService(ExpenseRepository repo) {
         this.repo = repo;
     }
-    public Expense addExpense(Expense expense){
+    public Expense addExpense(Expense expense) {
+        expense.setUserEmail(getCurrentUser());
         return repo.save(expense);
     }
 
-    public List<Expense> getAll(){
-        return repo.findAll();
+    public List<Expense> getAll() {
+        return repo.findByUserEmail(getCurrentUser());
     }
 
     public void delete(String id) {
@@ -45,5 +46,12 @@ public class ExpenseService {
                 .stream()
                 .mapToDouble(Expense::getAmount)
                 .sum();
+    }
+
+    // Get email of logged in user
+    private String getCurrentUser() {
+        return SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getName();
     }
 }

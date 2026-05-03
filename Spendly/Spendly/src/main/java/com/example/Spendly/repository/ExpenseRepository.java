@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ExpenseRepository extends MongoRepository<Expense,String> {
     List<Expense> findByDateBetween(LocalDate start, LocalDate end);
+    List<Expense> findByUserEmail(String userEmail);
 
 }
