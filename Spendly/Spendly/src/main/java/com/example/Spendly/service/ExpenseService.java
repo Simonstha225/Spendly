@@ -2,7 +2,9 @@ package com.example.Spendly.service;
 
 import com.example.Spendly.model.Expense;
 import com.example.Spendly.repository.ExpenseRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 import java.util.List;
 
