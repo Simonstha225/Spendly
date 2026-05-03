@@ -35,6 +35,7 @@ function App() {
     setExpenses(res.data);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchExpenses();
   }, [token]); // re-fetch when token changes (after login)
