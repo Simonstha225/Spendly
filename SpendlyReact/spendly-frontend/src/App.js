@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+import "chart.js/auto";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
@@ -12,7 +12,7 @@ function App() {
   const [selectedMonth, setSelectedMonth] = useState("");
   const [budget, setBudget] = useState("");
 
-  const API = "http://localhost:8080/api/expenses";
+  const API = "https://spendly-7dkt.onrender.com/api/expenses";
 
   // 📥 Fetch expenses
   const fetchExpenses = async () => {
